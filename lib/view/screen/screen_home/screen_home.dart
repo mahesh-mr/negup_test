@@ -37,7 +37,8 @@ class HomeScreen extends StatelessWidget {
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               height15,
-              CustomButton(color:  Colors.red,
+              CustomButton(
+                  color: Colors.red,
                   onPressed: () {
                     storage.write("isLogin", false);
                     storage.remove('username');

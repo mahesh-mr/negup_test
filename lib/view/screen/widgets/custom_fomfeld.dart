@@ -8,7 +8,7 @@ class CustomTextForm extends StatefulWidget {
   final TextInputType textinputType;
   final int maxline;
 
-  CustomTextForm({
+  const CustomTextForm({
     super.key,
     required this.controller,
     required this.icons,
@@ -30,18 +30,20 @@ class _CustomTextFormState extends State<CustomTextForm> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.title, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-        const SizedBox(height: 10,),
+        Text(
+          widget.title,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         TextFormField(
           maxLines: widget.maxline,
           controller: widget.controller,
           validator: widget.validator,
-          obscureText:
-          
-          widget.title=="Password"?
-          _obscureText:false,
+          obscureText: widget.title == "Password" ? _obscureText : false,
           decoration: InputDecoration(
-              suffixIcon: widget.title=="Password"
+              suffixIcon: widget.title == "Password"
                   ? IconButton(
                       icon: Icon(
                         _obscureText ? Icons.visibility_off : Icons.visibility,
@@ -54,7 +56,7 @@ class _CustomTextFormState extends State<CustomTextForm> {
                       },
                     )
                   : null,
-            contentPadding: const EdgeInsets.all(.5),
+              contentPadding: const EdgeInsets.all(.5),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
@@ -70,7 +72,7 @@ class _CustomTextFormState extends State<CustomTextForm> {
               ),
               fillColor: const Color.fromARGB(255, 210, 205, 205),
               // focusColor: grey,
-               
+
               filled: true,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
