@@ -5,7 +5,6 @@ import 'package:negup_task/view/screen/screen_login/screen_login.dart';
 
 void main() async {
   await GetStorage.init();
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   GetStorage storage = GetStorage();
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: storage.read('isLogin') ? const HomeScreen() : LoginScreen(),
+      home:
+          storage.read('isLogin')==null ?  LoginScreen():const HomeScreen() ,
     );
   }
 }

@@ -26,19 +26,19 @@ class HomeScreen extends StatelessWidget {
               ),
               height15,
               Text(
-                storage.read("username"),
+                
+                storage.read("username")??"",
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               height15,
               Text(
-                storage.read("password"),
+                storage.read("password")??"",
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               height15,
-              CustomButton(
-                  color: Colors.red,
+              CustomButton(color:  Colors.red,
                   onPressed: () {
                     storage.write("isLogin", false);
                     storage.remove('username');
