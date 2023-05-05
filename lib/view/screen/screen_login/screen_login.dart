@@ -16,8 +16,6 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    print(  storage.read("username")==null? "sjdffjskdljfklsdf":  storage.read("username"));
-        print(  storage.read("password")==null? "124568":  storage.read("password"));
     final size = MediaQuery.of(context).size;
     final height = size.height;
     final width = size.width;
